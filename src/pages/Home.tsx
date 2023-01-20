@@ -3,7 +3,7 @@ import { IonRouterOutlet } from '@ionic/react'
 import { Route } from 'react-router-dom'
 
 import Tab1 from './Tab1';
-import RoutesContainer from './RoutesContainer';
+import NestedRoutes from './NestedRoutes';
 import Tab2 from './Tab2';
 
 const Main: React.FC = () => {
@@ -11,7 +11,9 @@ const Main: React.FC = () => {
     <IonPage>
         <IonRouterOutlet>
             <Route exact path="/" component={Tab1} />
-            <Route path="/tab2" component={RoutesContainer} />
+            {/* Animation / Swipe back does NOT work */}
+            <Route path="/tab2" component={NestedRoutes} />
+            {/* Animation / Swipe works correctly */}
             {/* <Route path="/tab2" component={Tab2} /> */}
         </IonRouterOutlet>
     </IonPage>
